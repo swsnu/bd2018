@@ -118,6 +118,7 @@ Graph Processing System. Xiaowei Zhu, Wenguang Chen, Weimin Zheng, Xiaosong Ma. 
 - [GraphX](https://amplab.cs.berkeley.edu/wp-content/uploads/2014/09/graphx.pdf). GraphX: Graph Processing in a Distributed Dataflow Framework. Joseph E. Gonzalez, Reynold S. Xin, Ankur Dave, Daniel Crankshaw, Michael J. Franklin, Ion Stoica. OSDI 2014.
 - [Arabesque](https://arxiv.org/pdf/1510.04233.pdf). Arabesque: A System for Distributed Graph Mining Extended version. Carlos H. C. Teixeira, Alexandre J. Fonseca, Marco Serafini, Georgos Siganos, Mohammed J. Zaki, Ashraf Aboulnaga. Shorter version appeared at SOSP 2015.
 - [Giraph](https://research.fb.com/wp-content/uploads/2016/11/one-trillion-edges-graph-processing-at-facebook-scale.pdf?). One Trillion Edges: Graph Processing at Facebook-Scale. Avery Ching, Sergey Edunov, Maja Kabiljo, Dionysios Logothetis, Sambavi Muthukrishnan. VLDB 2015.
+- [ASAP]. ASAP: Fast, Approximate Pattern Mining at Scale. Anand Padmanabha Iyer, Zaoxing Liu, Xin Jin, Shivaram Venkataraman, Vladimir Braverman, Ion Stoica. OSDI 2018.
 
 ### Distributed Store
 - [GFS](http://static.googleusercontent.com/media/research.google.com/en//archive/gfs-sosp2003.pdf). The Google File System. Sanjay Ghemawat, Howard Gobioff, and Shun-Tak Leung. SOSP 2003. 
