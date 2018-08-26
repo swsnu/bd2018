@@ -8,8 +8,8 @@
 |------|---------|------------------|
 | Week1 9.4/6 | Introduction. Resource Manager: YARN, Mesos, Borg | |
 | Week2 9.11/13 | Meta-framework: REEF, Dataflow processing: MR, Dryad | |
-| Week3 9.18/20 | Dataflow processing: Spark, Tez, Vortex, Naiad | Team formation & project proposal due |
-| Week4 9.25(추석)/27 | Programming: Hive, DryadLINQ, Spark/Shark, Pig, FlumeJava, Beam | HW1 out |
+| Week3 9.18/20 | Dataflow processing: Spark, Tez, Vortex, Naiad | Team formation & project proposal due, HW1 out |
+| Week4 9.25(추석)/27 | Programming: Hive, DryadLINQ, Spark/Shark, Pig, FlumeJava, Beam |  |
 | Week5 10.2/4 | Stream processing: SparkStreaming, Storm, Heron, Flink, MIST |  |
 | Week6 10.9/11 | Stream processing: SparkStreaming, Storm, Heron, Flink, MIST | HW1 due, HW2 out |
 | Week7 10.16/18 | ML/DL framework: Parameter server/Tensorflow |   |
