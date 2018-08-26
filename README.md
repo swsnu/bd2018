@@ -12,12 +12,12 @@
 | Week4 9.25(추석)/27 | Programming: Hive, DryadLINQ, Spark/Shark, Pig, FlumeJava, Beam | HW1 out |
 | Week5 10.2/4 | Stream processing: SparkStreaming, Storm, Heron, Flink, MIST |  |
 | Week6 10.9/11 | Stream processing: SparkStreaming, Storm, Heron, Flink, MIST | HW1 due, HW2 out |
-| Week7 10.16/18 | ML/DL framework: Parameter server/Tensorflow |  |
+| Week7 10.16/18 | ML/DL framework: Parameter server/Tensorflow |   |
 | Week8 10.23/10.25 | DL framework - Tensorflow/Caffe2/Torch | Project progress presentation (11.1)|
 | Week9 10.30/11.1 | DL framework - Tensorflow/Caffe2/Torch  | |
 | Week10 11.6/8 | DL framework - Tensorflow/Caffe2/Torch | HW2 due |
 | Week11 11.13/15 |  Graph processing - Pregel, GraphLab, X-Stream, Arabesque | |
-| Week12 11.20/22 |  Graph processing - Pregel, GraphLab, X-Stream, Arabesque | Survey paper due (covering 5~10 papers) |
+| Week12 11.20/22 |  Graph processing - Pregel, GraphLab, X-Stream, Arabesque | Survey paper due (covering >= 5 papers) |
 | Week13 11.27/29 | DS - GFS, Bigtable, Dynamo ||
 | Week14 12.4/6 | Coordination - Chubby, Zookeeper ||
 | Week15 12.11/13 | TBD, Project presentation ||
