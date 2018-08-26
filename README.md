@@ -68,7 +68,6 @@ Data Analytics Frameworks. Kay Ousterhout, Ryan Rasti, Sylvia Ratnasamy, Scott S
 - [RealtimeFacebook](http://web.eecs.umich.edu/~mosharaf/Readings/Facebook-Streaming.pdf). Realtime Data Processing at Facebook. Guoqiang Jerry Chen, Janet L. Wiener, Shridhar Iyer, Anshul Jaiswal, Ran Lei, Nikhil Simha, Wei Wang, Kevin Wilfong, Tim Williamson, Serhat Yilmaz. SIGMOD 2016.
 - [Trill](http://www.vldb.org/pvldb/vol8/p401-chandramouli.pdf). Trill: A High-Performance Incremental Query Processor for Diverse Analytics. Badrish Chandramouli, Jonathan Goldstein, Mike Barnett, Robert DeLine, Danyel Fisher, John C. Platt, James F. Terwilliger, John Wernsing. VLDB 2014.
 - [SEEP](http://lsds.doc.ic.ac.uk/sites/default/files/sigmod13-seep.pdf). Integrating Scale Out and Fault Tolerance in Stream Processing using Operator State Management. Raul Castro Fernandez, Matteo Migliavacca, Evangelia Kalyvianaki, Peter Pietzuch. SIGMOD 2013.
-- [SummaryStore]. Low-Latency Analytics on Colossal Data Streams with SummaryStore. Nitin Agrawal, Ashish Vulimiri. SOSP 2017.
 
 ### Machine Learning/Deep Learning
 - [PS](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf). Scaling Distributed Machine Learning with the Parameter Server. Mu Li, David G. Andersen, Jun Woo Park, Alexander J. Smola, Amr Ahmed, Vanja Josifovski, James Long, Eugene J. Shekita, and Bor-Yiing Su. OSDI 2014.
