@@ -47,6 +47,7 @@ for Data-Parallel Execution Plans. Qifa Ke, Michael Isard, Yuan Yu. EuroSys 2013
 - [Pado](http://dl.acm.org/citation.cfm?id=3064181&dl=ACM&coll=DL&CFID=977360376&CFTOKEN=40744495). Pado: A Data Processing Engine for Harnessing Transient Resources in Datacenters. Youngseok Yang, Geon-Woo Kim, Won Wook Song, Yunseong Lee, Andrew Chung, Zhengping Qian, Brian Cho, Byung-Gon Chun. EuroSys 2017.
 - [PerfAnalysis](https://www.usenix.org/system/files/conference/nsdi15/nsdi15-paper-ousterhout.pdf). Making Sense of Performance in
 Data Analytics Frameworks. Kay Ousterhout, Ryan Rasti, Sylvia Ratnasamy, Scott Shenker, Byung-Gon Chun. NSDI 2015.
+- [Flare]. Flare: Optimizing Apache Spark for Scale-Up Architectures and Medium-Size Data. Gregory Essertel, Ruby Tahboub, James Decker, Kevin Brown, Kunle Olukotun, Tiark Rompf. OSDI 2018.
 
 ### High-level Data Processing Programming 
 - [Hive](http://infolab.stanford.edu/~ragho/hive-icde2010.pdf). Hive – A Petabyte Scale Data Warehouse Using Hadoop. Ashish Thusoo, Joydeep Sen Sarma, Namit Jain, Zheng Shao, Prasad Chakka, Ning Zhang, Suresh Antony, Hao Liu and Raghotham Murthy. ICDE 2010.
@@ -68,8 +69,12 @@ Data Analytics Frameworks. Kay Ousterhout, Ryan Rasti, Sylvia Ratnasamy, Scott S
 - [RealtimeFacebook](http://web.eecs.umich.edu/~mosharaf/Readings/Facebook-Streaming.pdf). Realtime Data Processing at Facebook. Guoqiang Jerry Chen, Janet L. Wiener, Shridhar Iyer, Anshul Jaiswal, Ran Lei, Nikhil Simha, Wei Wang, Kevin Wilfong, Tim Williamson, Serhat Yilmaz. SIGMOD 2016.
 - [Trill](http://www.vldb.org/pvldb/vol8/p401-chandramouli.pdf). Trill: A High-Performance Incremental Query Processor for Diverse Analytics. Badrish Chandramouli, Jonathan Goldstein, Mike Barnett, Robert DeLine, Danyel Fisher, John C. Platt, James F. Terwilliger, John Wernsing. VLDB 2014.
 - [SEEP](http://lsds.doc.ic.ac.uk/sites/default/files/sigmod13-seep.pdf). Integrating Scale Out and Fault Tolerance in Stream Processing using Operator State Management. Raul Castro Fernandez, Matteo Migliavacca, Evangelia Kalyvianaki, Peter Pietzuch. SIGMOD 2013.
+- [ThreeSteps]. Vasiliki Kalavri, John Liagouris, Moritz Hoffmann, Desislava Dimitrova, Matthew Forshaw, Timothy Roscoe. Three steps is all you need: fast, accurate, automatic scaling decisions for distributed streaming dataflows. OSDI 2018.
 
 ### Machine Learning/Deep Learning
+- [FacebookAIInfra](https://research.fb.com/wp-content/uploads/2017/12/hpca-2018-facebook.pdf). Applied Machine Learning at Facebook:
+A Datacenter Infrastructure Perspective. Kim Hazelwood, Sarah Bird, David Brooks, Soumith Chintala, Utku Diril, Dmytro Dzhulgakov,
+Mohamed Fawzy, Bill Jia, Yangqing Jia, Aditya Kalro, James Law, Kevin Lee, Jason Lu, Pieter Noordhuis, Misha Smelyanskiy, Liang Xiong, Xiaodong Wang. HPCA 2018.
 - [PS](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-li_mu.pdf). Scaling Distributed Machine Learning with the Parameter Server. Mu Li, David G. Andersen, Jun Woo Park, Alexander J. Smola, Amr Ahmed, Vanja Josifovski, James Long, Eugene J. Shekita, and Bor-Yiing Su. OSDI 2014.
 - [Petuum](http://www.cs.cmu.edu/~seunghak/petuum_kdd15.pdf). Petuum: A New Platform for Distributed Machine Learning on Big Data. Eric P. Xing, Qirong Ho, Wei Dai, Jin Kyu Kim, Jinliang Wei, Seunghak Lee, Xun Zheng, Pengtao Xie, Abhimanu Kumar, and Yaoliang Yu. KDD 2015.
 - [Adam](https://www.usenix.org/system/files/conference/osdi14/osdi14-paper-chilimbi.pdf). Project Adam: Building an Efficient and Scalable Deep Learning Training System. Trishul Chilimbi, Yutaka Suzue, Johnson Apacible, and Karthik Kalyanaraman. OSDI 2014.
