@@ -95,6 +95,7 @@ Machine Learning. Martín Abadi, Paul Barham, Jianmin Chen, Zhifeng Chen, Andy D
 - [TVM]. An Automated End-to-End Optimizing Compiler for Deep Learning. Tianqi Chen, Thierry Moreau, Ziheng Jiang, Lianmin Zheng, Eddie Yan, Haichen Shen, Meghan Cowan, Leyuan Wang, Yuwei Hu, Luis Ceze, Carlos Guestrin, Arvind Krishnamurthy. OSDI 2018.
 - [Gandiva]. Gandiva: Introspective Cluster Scheduling for Deep Learning. Wencong Xiao, Romil Bhardwaj, Ramachandran Ramjee, Muthian Sivathanu, Nipun Kwatra, Zhenhua Han, Pratyush Patel, Xuan Peng, Hanyu Zhao, Quanlu Zhang, Fan Yang, Lidong Zhou. OSDI 2018.
 - [PRETZEL]. PRETZEL: Opening the Black Box of Machine Learning Prediction Serving Systems. Yunseong Lee, Alberto Scolari, Byung-Gon Chun, Marco Domenico Santambrogio, Markus Weimer, Matteo Interlandi. OSDI 2018.
+- [CellularBatching](http://madsys.cs.tsinghua.edu.cn/publications/EUROSYS2018-gao.pdf). Low Latency RNN Inference with Cellular Batching. Pin Gao, Lingfan Yu, Yongwei Wu, Jinyang Li. EuroSys 2018.
 - [TPU](https://arxiv.org/pdf/1704.04760.pdf). In-Datacenter Performance Analysis of a Tensor Processing Unit. Norman P. Jouppi, Cliff Young, Nishant Patil, David Patterson, Gaurav Agrawal, Raminder Bajwa, Sarah Bates,
 Suresh Bhatia, Nan Boden, Al Borchers, Rick Boyle, Pierre-luc Cantin, Clifford Chao, Chris Clark, Jeremy Coriell,
 Mike Daley, Matt Dau, Jeffrey Dean, Ben Gelb, Tara Vazir Ghaemmaghami, Rajendra Gottipati, William Gulland,
