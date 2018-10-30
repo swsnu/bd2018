@@ -1,6 +1,7 @@
 # [HW1] Beam on Spark/Nemo
 
-**Due Oct. 31 (Wed), 6pm**
+~~**Due Oct. 31 (Wed), 6pm**~~
+~~**Due Nov. 2 (Fri), 6pm**~~
 
 **Questions about HW1: Please create new issues in https://github.com/swsnu/bd2018/issues**
 
