@@ -6,7 +6,7 @@ tar -zxvf nemo-shaded.tar.gz
 mvn clean install -Pnemo-runner
 
 #run
-java -cp `pwd`/nemo-shaded.jar:`yarn classpath`:`pwd`/target/bd_hw-1.0-SNAPSHOT.jar \
+java -cp `pwd`/nemo-shaded.jar:`yarn classpath`:`pwd`/target/bd_hw-1.0-SNAPSHOT-shaded.jar \
 org.apache.nemo.client.JobLauncher \
   -job_id BD_HW_ONE \
   -executor_json `pwd`/nemo-resources.json \
