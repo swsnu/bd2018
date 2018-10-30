@@ -56,7 +56,7 @@
 
 ## HW upload guide
 * Upload to your private Github repository
-  * https://github.com/YOUR_GITHUB_ID/bd17f-YOUR_NAME (e.g., https://github.com/johnyangk/bd17f-YoungSeok)
+  * https://github.com/YOUR_GITHUB_ID/bd18f-YOUR_NAME (e.g., https://github.com/johnyangk/bd18f-YoungSeok)
   * The code
   * Report in PDF format
 * Do not upload the datasets! (they may be big, so we'll instead use the scripts to download them)
