@@ -63,6 +63,7 @@
 * NCCL: https://docs.nvidia.com/deeplearning/sdk/nccl-install-guide/index.html#tar
   * Use OS agnostic version
 * Parallax: https://github.com/snuspl/parallax/blob/master/doc/installation.md
+  * **If you are going to use only CPUs for training, use `cpu_enable` branch of Parallax. (Modified on Nov. 24)**
 
 
 ## Skeleton code guide
