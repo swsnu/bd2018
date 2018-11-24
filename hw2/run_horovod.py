@@ -1,3 +1,11 @@
+"""
+Example command for running this script:
+mpirun --mca btl_vader_single_copy_mechanism none --allow-run-as-root -bind-to none -map-by slot -mca orte_base_help_aggregate 0 -x NCCL_DEBUG=INFO -np 2 -H localhost:2 python run_horovod.py --max_steps=100
+
+Example command for examining the checkpoint file:
+python <PARALLAX_HOME>/tensorflow/tensorflow/python/tools/inspect_checkpoint.py --file_name=hvd_ckpt/model.ckpt-0 --tensor_name=conv1/kernel
+"""
+
 import os
 import time
 import tensorflow as tf
@@ -38,10 +46,21 @@ optimizer = tf.train.AdamOptimizer(learning_rate=model.learning_rate)
 optimizer = hvd.DistributedOptimizer(optimizer)
 train_op = optimizer.minimize(loss, global_step=global_step)
 
-with tf.train.MonitoredTrainingSession() as sess:
+hooks = [hvd.BroadcastGlobalVariablesHook(0)]
+if hvd.rank() == 0:
+  saver = tf.train.Saver(tf.global_variables(), save_relative_paths=False,
+                         allow_empty=True, max_to_keep=1000000)
+  tf.add_to_collection(tf.GraphKeys.SAVERS, saver)
+  scaffold = tf.train.Scaffold(saver=saver)
+  ckpt_hook = tf.train.CheckpointSaverHook('hvd_ckpt',
+                                           save_steps=1,
+                                           scaffold=scaffold)
+  hooks.append(ckpt_hook)
+
+with tf.train.MonitoredTrainingSession(hooks=hooks) as sess:
   start = time.time()
   for i in range(FLAGS.max_steps):
-    batch = mnist.train.next_batch(FLAGS.batch_size)
+    batch = mnist.train.next_batch(FLAGS.batch_size, shuffle=False)
     _, loss_ = sess.run([train_op, loss], feed_dict={x: batch[0],
                                                      y: batch[1],
                                                      is_training: True})
@@ -54,4 +73,3 @@ with tf.train.MonitoredTrainingSession() as sess:
       print("step: %d, test accuracy: %lf, throughput: %f steps/sec"
             % (i, acc_, throughput))
       start = time.time()
-

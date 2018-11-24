@@ -1,3 +1,13 @@
+"""
+Example command for running this script:
+python run_tf.py --ps_hosts=localhost:12345 --worker_hosts=localhost:12346,localhost:12347 --job_name=ps --task_index=0 --max_steps=100
+python run_tf.py --ps_hosts=localhost:12345 --worker_hosts=localhost:12346,localhost:12347 --job_name=worker --task_index=0 --max_steps=100
+python run_tf.py --ps_hosts=localhost:12345 --worker_hosts=localhost:12346,localhost:12347 --job_name=worker --task_index=1 --max_steps=100
+
+Example command for examining the checkpoint file:
+python <PARALLAX_HOME>/tensorflow/tensorflow/python/tools/inspect_checkpoint.py --file_name=tf_ckpt/model.ckpt-0 --tensor_name=conv1/kernel
+"""
+
 import os
 import time
 import tensorflow as tf
@@ -27,6 +37,7 @@ tf.app.flags.DEFINE_integer('batch_size', 32,
 
 ps_hosts = FLAGS.ps_hosts.split(",")
 worker_hosts = FLAGS.worker_hosts.split(",")
+num_workers = len(worker_hosts)
 
 # Create a cluster from the parameter server and worker hosts.
 cluster = tf.train.ClusterSpec({"ps": ps_hosts, "worker": worker_hosts})
@@ -60,12 +71,30 @@ with tf.device(tf.train.replica_device_setter(
       tf.float32))
 
   optimizer = tf.train.AdamOptimizer(learning_rate=model.learning_rate)
+  optimizer = tf.train.SyncReplicasOptimizer(
+      optimizer,
+      replicas_to_aggregate=num_workers,
+      total_num_replicas=num_workers)
   train_op = optimizer.minimize(loss, global_step=global_step)
 
-with tf.train.MonitoredTrainingSession(master=server.target) as sess:
+  is_chief = (FLAGS.task_index == 0)
+  sync_replicas_hook = optimizer.make_session_run_hook(is_chief)
+
+  saver = tf.train.Saver(tf.global_variables(), save_relative_paths=False,
+                         allow_empty=True, max_to_keep=1000000)
+  tf.add_to_collection(tf.GraphKeys.SAVERS, saver)
+  scaffold = tf.train.Scaffold(saver=saver)
+  ckpt_hook = tf.train.CheckpointSaverHook('tf_ckpt',
+                                           save_steps=1,
+                                           scaffold=scaffold)
+
+with tf.train.MonitoredTrainingSession(master=server.target,
+                                       is_chief=is_chief,
+                                       hooks=[sync_replicas_hook],
+                                       chief_only_hooks=[ckpt_hook]) as sess:
   start = time.time()
   for i in range(FLAGS.max_steps):
-    batch = mnist.train.next_batch(FLAGS.batch_size)
+    batch = mnist.train.next_batch(FLAGS.batch_size, shuffle=False)
     _, loss_ = sess.run([train_op, loss], feed_dict={x: batch[0],
                                                      y: batch[1],
                                                      is_training: True})

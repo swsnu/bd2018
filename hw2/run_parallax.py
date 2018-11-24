@@ -1,3 +1,12 @@
+"""
+Example command for running this script:
+python run_parallax.py --max_steps=10
+
+Example command for examining the checkpoint file:
+python <PARALLAX_HOME>/tensorflow/tensorflow/python/tools/inspect_checkpoint.py --file_name=parallax_ckpt/model.ckpt-0 --tensor_name=conv1/kernel
+"""
+
+
 import os
 import time
 import tensorflow as tf
@@ -35,14 +44,20 @@ with single_gpu_graph.as_default():
   y = ops['labels']
   is_training = ops['is_training']
 
+parallax_config = parallax.Config()
+ckpt_config = parallax.CheckPointConfig(ckpt_dir='parallax_ckpt',
+                                        save_ckpt_steps=1)
+parallax_config.ckpt_config = ckpt_config
+
 sess, num_workers, worker_id, num_replicas_per_worker = parallax.parallel_run(
     single_gpu_graph,
     FLAGS.resource_info_file,
-    sync=FLAGS.sync)
+    sync=FLAGS.sync,
+    parallax_config=parallax_config)
 
 start = time.time()
 for i in range(FLAGS.max_steps):
-  batch = mnist.train.next_batch(FLAGS.batch_size)
+  batch = mnist.train.next_batch(FLAGS.batch_size, shuffle=False)
   _, loss_ = sess.run([train_op, loss], feed_dict={x: [batch[0]],
                                                    y: [batch[1]],
                                                    is_training: [True]})
